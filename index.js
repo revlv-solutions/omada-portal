@@ -968,3 +968,28 @@ function escapeHtml(string) {
 function setNormalButton() {
     $("#button-login").html(globalConfig.buttonText);
 }
+
+// terms & conditions
+$(function(){
+    var modal = document.getElementById("termsModal");
+    var loginBtn = document.getElementById("button-login");
+    loginBtn.disabled = true;
+    loginBtn.style.opacity = "0.5";
+    loginBtn.style.cursor = "not-allowed";
+    loginBtn.style.pointerEvents = "none";
+    document.getElementById("openTerms").onclick = function(){ modal.style.display = "block"; };
+    document.getElementById("closeTerms").onclick = function(){ modal.style.display = "none"; };
+    document.getElementById("agreeTerms").onchange = function(){
+        if(this.checked){
+            loginBtn.disabled = false;
+            loginBtn.style.opacity = "1";
+            loginBtn.style.cursor = "pointer";
+            loginBtn.style.pointerEvents = "auto";
+        } else {
+            loginBtn.disabled = true;
+            loginBtn.style.opacity = "0.5";
+            loginBtn.style.cursor = "not-allowed";
+            loginBtn.style.pointerEvents = "none";
+        }
+    };
+});

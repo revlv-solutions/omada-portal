@@ -2,91 +2,83 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" href="index.css" type="text/css" />
 <body class="portal">
-    <div class="portal-container">
-        <div class="portal-wrapper">
-            <div class="logo-img-sets">
-                <div class="logo-img govt-logo">
-                    <img class="logo" src="portal-government-logos.png">
-                </div>
-                <div class="logo-img free-wifi">
-                    <img class="logo" src="portal-free-wifi-logo.png">
-                </div>
+    <div class="logo-img">
+        <img class="logo govt-logo" src="portal-government-logos.png">
+    </div>
+    <div class="logo-img">
+        <img class="logo free-wifi-logo" src="portal-free-wifi-logo.png">
+    </div>
+
+    <div class="oper-section-outer">
+        <div class="oper-section-inner">
+            <span id="oper-hint" style="color: red"></span>
+            <div id="hotspot-section">
+                <select id="hotspot-selector" class="oper-section-item"></select>
             </div>
-
-            <div class="oper-section-outer">
-                <div class="oper-section-inner">
-                    <span id="oper-hint" style="color: red"></span>
-                    <div id="hotspot-section">
-                        <select id="hotspot-selector" class="oper-section-item"></select>
-                    </div>
-                    <form id="login-form">
-                        <div id="input-voucher">
-                            <input id="voucherCode" class="oper-section-item input" name="voucherCode" type="text" placeholder="Voucher Code"/>
-                        </div>
-                        <div id="input-user">
-                            <input id="username" class="oper-section-item input" name="username" type="text" placeholder="Username"/>
-                        </div>
-                        <div id="input-password" class="user-input">
-                            <input id="password" class="oper-section-item input" name="password" type="password"  placeholder="Password"/>
-                        </div>
-                        <div id="input-simple">
-                            <input id="simplePassword" class="password oper-section-item" name="simplePassword" type="password" placeholder="Password"/>
-                        </div>
-                        <div id="input-phone-num">
-                            <span class="add">+</span><input id="country-code" class="input"><input id="phone-number" class="input" name="phone-number" type="text" placeholder="Phone Number"/>
-                        </div>
-                        <div id="input-verify-code">
-                            <input id="verify-code" class="input" name="verify-code" type="text" placeholder="Verification Code"/><button id="get-code" class="button">Get Code</button>
-                        </div>
-                        <input name="clientMac" id="cMac" style="display:none"/>
-                        <input name="radiusSvrIp" id="radiusServerIp" style="display:none"/>
-                    </form>
-                    <div id="button-area">
-                        <button id="button-login" class="button oper-section-item">Log In</button>
-                    </div>
-
-                    <div class="terms-agree">
-                        <label class="custom-checkbox">
-                            <input type="checkbox" id="agreeTerms">
-                            <span class="checkmark"></span>
-                            <span class="terms-text">
-                                I agree to the
-                                <a href="javascript:void(0);" id="openTerms">Terms & Conditions</a>
-                            </span>
-                        </label>
-                    </div>
+            <form id="login-form">
+                <div id="input-voucher">
+                    <input id="voucherCode" class="oper-section-item input" name="voucherCode" type="text" placeholder="Voucher Code"/>
                 </div>
+                <div id="input-user">
+                    <input id="username" class="oper-section-item input" name="username" type="text" placeholder="Username"/>
+                </div>
+                <div id="input-password" class="user-input">
+                    <input id="password" class="oper-section-item input" name="password" type="password"  placeholder="Password"/>
+                </div>
+                <div id="input-simple">
+                    <input id="simplePassword" class="password oper-section-item" name="simplePassword" type="password" placeholder="Password"/>
+                </div>
+                <div id="input-phone-num">
+                    <span class="add">+</span><input id="country-code" class="input"><input id="phone-number" class="input" name="phone-number" type="text" placeholder="Phone Number"/>
+                </div>
+                <div id="input-verify-code">
+                    <input id="verify-code" class="input" name="verify-code" type="text" placeholder="Verification Code"/><button id="get-code" class="button">Get Code</button>
+                </div>
+                <input name="clientMac" id="cMac" style="display:none"/>
+                <input name="radiusSvrIp" id="radiusServerIp" style="display:none"/>
+            </form>
+            <div id="button-area">
+                <button id="button-login" class="button oper-section-item">Log In</button>
             </div>
-
-            <div id="form-auth-msg">
-              <div id="form-auth-outer">
-                  <div id="form-auth-close"></div>
-                  <div id="form-auth-inner">
-                      <div id="form-auth-header">
-                          <div id="form-auth-title"></div>
-                          <div id="form-auth-note"></div>
-                      </div>
-                    <div id="form-auth-content"></div>
-                      <div id="form-auth-footer">
-                          <a id="form-auth-submit" href="javascript:void(0);">Submit</a>
-                      </div>
-                  </div>
-              </div>
+            <div class="terms-agree">
+                <label class="custom-checkbox">
+                    <input type="checkbox" id="agreeTerms">
+                    <span class="checkmark"></span>
+                    <span class="terms-text">
+                        I agree to the
+                        <a href="javascript:void(0);" id="openTerms">Terms &amp; Conditions</a>
+                    </span>
+                </label>
             </div>
         </div>
     </div>
 
+    <div id="form-auth-msg">
+      <div id="form-auth-outer">
+          <div id="form-auth-close"></div>
+          <div id="form-auth-inner">
+              <div id="form-auth-header">
+                  <div id="form-auth-title"></div>
+                  <div id="form-auth-note"></div>
+              </div>
+            <div id="form-auth-content"></div>
+              <div id="form-auth-footer">
+                  <a id="form-auth-submit" href="javascript:void(0);">Submit</a>
+              </div>
+          </div>
+      </div>
+    </div>
+
     <div id="termsModal" class="custom-modal">
         <div class="custom-modal-content">
-            <button id="closeTerms" class="custom-close">×</button>
-
-            <div id="form-auth-content" class="terms-content">
+            <button id="closeTerms" class="custom-close">&times;</button>
+            <div class="terms-content">
               <h2>Terms and Conditions on Acceptable Use of BBM Free Wifi</h2>
               <h3>Guest WiFi Wireless Networking Acceptable Use Policy</h3>
 
               <p>
-                We are offering this guest WiFi wireless Internet service (the “Service”)
-                according to this Free Public WiFi Acceptable Use Policy (the “Policy”)
+                We are offering this guest WiFi wireless Internet service (the "Service")
+                according to this Free Public WiFi Acceptable Use Policy (the "Policy")
                 as a free, public service to visitors for the duration of their visits
                 on locations where free Wifi is accessible. All users of this Service
                 must agree to the terms of this Policy by clicking the ACCEPT button below.
@@ -95,7 +87,7 @@
               <p>
                 We have no control over information obtained through the Internet and cannot
                 be held responsible for its content or accuracy. Use of the Service is at
-                the user’s own risk. We reserve the right to remove, block, filter, or restrict
+                the user's own risk. We reserve the right to remove, block, filter, or restrict
                 any material that may be illegal or violate this Policy. We may cooperate
                 with legal authorities in investigations of suspected violations.
               </p>
@@ -152,23 +144,19 @@
                 By clicking the ACCEPT button at the bottom of this page, you acknowledge
                 that you understand and agree to this Policy.
               </p>
-
             </div>
-
         </div>
     </div>
 
     <script src="jquery.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-
             var modal = document.getElementById("termsModal");
             var openBtn = document.getElementById("openTerms");
             var closeBtn = document.getElementById("closeTerms");
             var checkbox = document.getElementById("agreeTerms");
             var loginBtn = document.getElementById("button-login");
 
-            // Disable login initially
             loginBtn.disabled = true;
             loginBtn.style.filter = "grayscale(100%)";
             loginBtn.style.cursor = "not-allowed";
@@ -204,10 +192,7 @@
                     loginBtn.style.pointerEvents = "none";
                 }
             };
-
         });
     </script>
 </body>
 <script src="index.js"></script>
-
-

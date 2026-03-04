@@ -230,6 +230,9 @@ Ajax.post(
                     break;
             }
 
+            var loginBtn = document.getElementById("button-login");
+            loginBtn.classList.add("loading");
+            loginBtn.disabled = true;
             if(isCommited == false){
                 submitData['clientMac'] = clientMac;
                 submitData['apMac'] = apMac;
@@ -254,8 +257,9 @@ Ajax.post(
                             isCommited = true;
                             landingUrl = data.result || landingUrl
                             window.location.href = landingUrl;
-                            document.getElementById("oper-hint").innerHTML = errorHintMap[data.errorCode];
                         } else{
+                            loginBtn.classList.remove("loading");
+                            loginBtn.disabled = false;
                             document.getElementById("oper-hint").innerHTML = errorHintMap[data.errorCode];
                         }
                     });
@@ -977,8 +981,8 @@ $(function(){
     loginBtn.style.opacity = "0.5";
     loginBtn.style.cursor = "not-allowed";
     loginBtn.style.pointerEvents = "none";
-    document.getElementById("openTerms").onclick = function(){ modal.style.display = "block"; };
-    document.getElementById("closeTerms").onclick = function(){ modal.style.display = "none"; };
+    document.getElementById("openTerms").onclick = function(){ modal.classList.add("active"); };
+    document.getElementById("closeTerms").onclick = function(){ modal.classList.remove("active"); };
     document.getElementById("agreeTerms").onchange = function(){
         if(this.checked){
             loginBtn.disabled = false;
